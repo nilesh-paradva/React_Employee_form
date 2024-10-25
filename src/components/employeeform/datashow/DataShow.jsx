@@ -1,8 +1,10 @@
-const DataShow = ({ EmployeeData, DeleteFun, EditFun, SelectData}) => {
+const DataShow = ({ EmployeeData, DeleteFun, EditFun, SelectData }) => {
     return (
         <>
             <div className="dataView w-[100%] text-center">
-                <h2 className="h1 mb-3">Employee Data Show</h2>
+                <div className="heading text-center">
+                    <h2 className="h1 inline-block border-2 p-3 rounded-xl mb-4">Manage employees </h2>
+                </div>
                 <table className="border-2 border-[#b7b3b3] w-full" cellPadding={10}>
                     <thead>
                         <tr className="border-2 border-[#b7b3b3]">
@@ -29,7 +31,7 @@ const DataShow = ({ EmployeeData, DeleteFun, EditFun, SelectData}) => {
                                     <td className="border-2 border-[#b7b3b3] w-[7rem]">{rec.Designation}</td>
                                     <td className="border-2 border-[#b7b3b3] w-[]">{rec.Department}</td>
                                     <td className="border-2 border-[#b7b3b3] w-[6rem]">{rec.City}</td>
-                                    <td className="w-[23rem]"><a href="#" className="px-3 py-2 bg-blue-600 rounded-lg me-2 inline-block text-white" onClick={() => SelectData(rec.Id)}>Select</a><a href="#" className="px-3 py-2 bg-green-600 rounded-lg me-2 inline-block text-white" onClick={() => EditFun(rec)}>Edit</a><a href="#" className="px-3 py-2 bg-red-600 rounded-lg inline-block text-white" onClick={() => DeleteFun(rec.Id)}>Delete</a></td>
+                                    <td className="w-[17rem]"><a href="#" className="px-3 py-2 bg-blue-600 rounded-lg me-2 inline-block text-white" onClick={() => SelectData(rec.Id)}><i className="fa-regular fa-eye"></i></a><a href="#" className="px-3 py-2 bg-green-600 rounded-lg me-2 inline-block text-white" onClick={() => EditFun(rec)}><i className="fa-solid fa-pen-to-square"></i></a><a href="#" className="px-3 py-2 bg-red-600 rounded-lg inline-block text-white" onClick={() => DeleteFun(rec.Id)}><i className="fa-solid fa-trash-can"></i></a></td>
                                 </tr>
                             )
                         })}

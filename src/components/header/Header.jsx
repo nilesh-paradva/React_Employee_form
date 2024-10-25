@@ -1,22 +1,28 @@
+import Logo_1 from "../../assets/images/logo/logo-1.png"
+import Logo_3 from "../../assets/images/logo/logo-3.png"
+
+
 const Header = () => {
     return(
         <>
-            <header>
+            <header className="pt-3">
                 <div className="container">
-                    <div className="row items-center justify-between p-3 bg-green-700">
-                        <div className="w-2/12">
+                    <div className="flex items-center justify-between p-3">
+                        <div className="w-3/12">
                             <div className="logo">
-                                <i className="fa-solid fa-house text-2xl cursor-pointer"></i>
+                                <a href="#" className="">
+                                    <img src={Logo_1} alt="" className="w-3/12 inline-block animate-bounce"/>
+                                </a>
                             </div>
                         </div>
-                        <div className="w-10/12 flex justify-end">
-                            <div className="button flex items-center">
-                                <div className="user">
-                                    <i className="fa-solid fa-user pe-3 text-2xl cursor-pointer"></i>
-                                </div>
-                                <div className="user-name">
-                                    <p className="text-white text-2xl font-sans">Employee Management</p>
-                                </div>
+                        <div className="w-6/12">
+                            <div className="heading text-center">
+                                <h1 className="h1 inline-block border-2 p-3 rounded-xl">Employee Alication</h1>
+                            </div>
+                        </div>
+                        <div className="w-3/12 flex justify-end">
+                            <div className="button flex items-center justify-end text-end">
+                                <a href="#"><img src={Logo_3} alt="" className="w-2/12 inline-block animate-bounce"/></a>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import Img_1 from "../../assets/images/employee-1.jpeg"
 import generateUniqueId from "generate-unique-id";
 import FormInputCreate from "./forminput/FormInputCreate";
 import SubmitButton from "./submitbutton/SubmitButton";
@@ -31,7 +32,7 @@ const Employee = () => {
             City: /^[A-Za-z ]{2,}$/.test(value),
         }
 
-        setValidField((prev) => ({ ...prev, [name]: isValid[name] ? (<span className="text-green-700 font-semibold">Valid {name}</span>) : (<span className="text-red-700 font-semibold">Invalid {name}</span>) }))
+        setValidField((prev) => ({ ...prev, [name]: isValid[name] ? (<span className="text-green-400 font-semibold ps-2">Valid {name}</span>) : (<span className="text-red-400 font-semibold ps-2">Invalid {name}</span>) }))
         return isValid[name];
     }
 
@@ -74,13 +75,14 @@ const Employee = () => {
         <>
             <section className="py-4">
                 <div className="container">
-                    <div className="w-12/12 flex items-center justify-center flex-col">
-                        <div className="w-6/12">
+                    <div className="w-12/12 relative flex items-center justify-center flex-col bg-my-image bg-cover bg-top  py-5 rounded-lg overflow-hidden">
+                        <div className="absolute inset-0 bg-black opacity-65"></div>
+                        <div className="w-6/12 border-2 backdrop-blur-lg rounded-lg overflow-hidden">
                             <FormInputCreate inputBox={inputField} inputHandle={handleField} inputValid={validField} />
                             <SubmitButton FormSubmited={FormSubmit} />
                         </div>
                     </div>
-                    <div className="w-12/12 mt-4">
+                    <div className="w-12/12 mt-5">
                         <DataShow EmployeeData={employeeStorage} DeleteFun={DataDelete} EditFun={DataEdit} SelectData = {RecSelect}/>
                     </div>
                 </div >
