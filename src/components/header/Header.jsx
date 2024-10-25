@@ -1,4 +1,4 @@
-import Logo_1 from "../../assets/images/logo/logo-1.png"
+import Logo_1 from "../../assets/images/logo/logo-2.png"
 import Logo_3 from "../../assets/images/logo/logo-3.png"
 
 
