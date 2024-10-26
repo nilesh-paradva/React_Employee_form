@@ -42,7 +42,7 @@ const Employee = () => {
         validError(name, value)
     }
 
-    const DataDelete = (id) => (setEmployeeStorage(employeeStorage.filter((data) => data.Id != id)))
+    const DataDelete = (id,e) => (setEmployeeStorage(employeeStorage.filter((data) => data.Id != id)))
     const DataEdit = (data) =>( setInputField({Name : data.Name, Phone_number: data.Phone_number, Address: data.Address, Email: data.Email, Designation: data.Designation, Department: data.Department, City: data.City}),setIdMatch(data.Id))
     const RecSelect = (id) => {
         console.log("selected id", id);

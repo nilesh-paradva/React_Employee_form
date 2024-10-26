@@ -34,7 +34,7 @@ const DataShow = ({ EmployeeData, DeleteFun, EditFun, SelectData }) => {
                                         <td className="border-2 border-[#b7b3b3] w-[7rem]">{rec.Designation}</td>
                                         <td className="border-2 border-[#b7b3b3] w-[]">{rec.Department}</td>
                                         <td className="border-2 border-[#b7b3b3] w-[6rem]">{rec.City}</td>
-                                        <td className="w-[17rem]"><a href="#" className="px-3 py-2 bg-blue-600 rounded-lg me-2 inline-block text-white" onClick={() => SelectData(rec.Id)}><i className="fa-regular fa-eye"></i></a><a href="#" className="px-3 py-2 bg-green-600 rounded-lg me-2 inline-block text-white" onClick={() => EditFun(rec)}><i className="fa-solid fa-pen-to-square"></i></a><a href="#" className="px-3 py-2 bg-red-600 rounded-lg inline-block text-white" onClick={() => DeleteFun(rec.Id)}><i className="fa-solid fa-trash-can"></i></a></td>
+                                        <td className="w-[17rem]"><a href="#javascript:void(0)" className="px-3 py-2 bg-blue-600 rounded-lg me-2 inline-block text-white" onClick={() => SelectData(rec.Id)}><i className="fa-regular fa-eye"></i></a><a href="#" className="px-3 py-2 bg-green-600 rounded-lg me-2 inline-block text-white" onClick={() => EditFun(rec)}><i className="fa-solid fa-pen-to-square"></i></a><a href="#javascript:void(0)" className="px-3 py-2 bg-red-600 rounded-lg inline-block text-white" onClick={() => DeleteFun(rec.Id)}><i className="fa-solid fa-trash-can"></i></a></td>
                                     </tr>
                                 )
                             })}
