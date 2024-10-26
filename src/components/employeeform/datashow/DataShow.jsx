@@ -1,5 +1,3 @@
-import "../../../App.css"
-
 const DataShow = ({ EmployeeData, DeleteFun, EditFun, SelectData }) => {
     return (
         <>
@@ -25,7 +23,7 @@ const DataShow = ({ EmployeeData, DeleteFun, EditFun, SelectData }) => {
                         <tbody>
                             {EmployeeData.map((rec) => {
                                 return (
-                                    <tr className="border-2 border-[#b7b3b3] " key={rec.Id}>
+                                    <tr className="border-2 border-[#b7b3b3] nth-child" key={rec.Id}>
                                         <td className="border-2 border-[#b7b3b3] w-[7rem]">{rec.Id}</td>
                                         <td className="border-2 border-[#b7b3b3] w-[13rem]">{rec.Name}</td>
                                         <td className="border-2 border-[#b7b3b3] w-[13rem]">{rec.Phone_number}</td>
