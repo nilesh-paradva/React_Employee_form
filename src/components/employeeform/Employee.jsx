@@ -25,7 +25,7 @@ const Employee = () => {
         const isValid = {
             Name: /^[A-Za-z ]{2,}$/.test(value),
             Phone_number: /^[0-9]{10}$/.test(value),
-            Address: /^[A-z -/]+\d+\s[A-z]+\s[A-z]+(.*)$/.test(value),
+            Address: /^[A-Za-z 0-9,.-/]{5,}$/.test(value),
             Email: /^[a-z0-9]+@[a-z]+\.[a-z]{2,}$/.test(value),
             Designation: /^[A-Za-z ]{2,}$/.test(value),
             Department: /^[A-Za-z ]{2,}$/.test(value),
@@ -42,7 +42,7 @@ const Employee = () => {
             message = `Invalid ${name}`;
         }
 
-        setValidField((prev) => ({ ...prev, [name]: <span className={isValid[name] ? "text-green-400 font-semibold ps-2" : "text-red-400 font-semibold ps-2"}>{message}</span>}))
+        setValidField((prev) => ({ ...prev, [name]: <span className={isValid[name] ? "text-green-600 font-semibold ps-2" : "text-red-500 font-semibold ps-2"}>{message}</span>}))
         return isValid[name];
     }
 
