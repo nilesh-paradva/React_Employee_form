@@ -74,7 +74,8 @@ const Employee = () => {
             const dataToSubmit = { ...inputField, Id: IdMatch || randomId };
             setEmployeeStorage(prev => IdMatch ? prev.map((data) => data.Id === IdMatch ? dataToSubmit : data) : [...prev, dataToSubmit]);
             setInputField({ Name: '', Phone_number: '', Address: '', Email: '', Designation: '', Department: '', City: '' });
-            setValidField({})
+            setValidField({});
+            setborderValid({});
         } else {
             alert("Form not submitted");
         }
