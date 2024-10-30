@@ -1,18 +1,13 @@
-const FormInputCreate = ({ inputBox, inputHandle, inputValid}) => {
-    console.log("input valid",inputValid);
-    
+const FormInputCreate = ({ inputBox, inputHandle, inputValid }) => {
     return (
         <>
-            {["Name", "Phone_number", "Address", "Email", "Designation", "Department", "City"].map((data) => {
-
-                return (
-                    <div className={`eployee-field ${data}`} key={data}>
-                        <label htmlFor="" className="font-semibold text-1xl mb-1 text-white">{data + " :-"}</label>{inputValid[data]}
-                        <input type="text" placeholder={"Enter your " + data} name={data} value={inputBox[data]} className={`w-full border-2 py-2 px-3 bg-[#3e3c3c] rounded-lg mb-3 outline-none placeholder:text-[#a19d9d] text-white`} onChange={inputHandle} />
-                    </div>
-                )
-            })}
+            {Object.keys(inputBox).map((key) => (
+                <div key={key} className="mb-4">
+                    <label className="text-sm font-medium text-white">{key}</label>{inputValid[key]}
+                    <input type="text" name={key} value={inputBox[key]} onChange={inputHandle} placeholder={`Enter ${key}`} className={`mt-1 block w-full text-white px-3 bg-[#928b8b] py-2 border-2 ${inputValid[key] ? 'border-yellow-300' : 'border-red-400'} rounded-md shadow-sm outline-none placeholder:text-[#dfd5d5]`}/>
+                </div>
+            ))}
         </>
-    )
-}
+    );
+};
 export default FormInputCreate
