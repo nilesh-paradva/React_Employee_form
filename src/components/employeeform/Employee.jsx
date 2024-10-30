@@ -17,6 +17,7 @@ const Employee = () => {
         City: ''
     })
 
+    const [borderValid, setborderValid] = useState({})
     const [validField, setValidField] = useState({});
     const [employeeStorage, setEmployeeStorage] = useState(StorageGet());
     const [IdMatch, setIdMatch] = useState(null);
@@ -25,7 +26,7 @@ const Employee = () => {
         const isValid = {
             Name: /^[A-Za-z ]{2,}$/.test(value),
             Phone_number: /^[0-9]{10}$/.test(value),
-            Address: /^[A-Za-z 0-9,.-/]{5,}$/.test(value),
+            Address: /^[,.-/A-Z-a-z 0-9]{5,}$/.test(value),
             Email: /^[a-z0-9]+@[a-z]+\.[a-z]{2,}$/.test(value),
             Designation: /^[A-Za-z ]{2,}$/.test(value),
             Department: /^[A-Za-z ]{2,}$/.test(value),
@@ -43,6 +44,7 @@ const Employee = () => {
         }
 
         setValidField((prev) => ({ ...prev, [name]: <span className={isValid[name] ? "text-green-600 font-semibold ps-2" : "text-red-500 font-semibold ps-2"}>{message}</span>}))
+        setborderValid((prev) => ({ ...prev, [name]: isValid[name] ? "border-green-600" : "border-red-600" }))
         return isValid[name];
     }
 
@@ -90,7 +92,7 @@ const Employee = () => {
                         <div className="absolute inset-0 bg-black opacity-65"></div>
                         <div className="w-6/12 border-2 backdrop-blur-lg rounded-lg overflow-hidden">
                             <form action="" className="p-3">
-                                <FormInputCreate inputBox={inputField} inputHandle={handleField} inputValid={validField}/>
+                                <FormInputCreate inputBox={inputField} inputHandle={handleField} inputValid={validField} BorderValid={borderValid}/>
                                 <SubmitButton FormSubmited={FormSubmit} />
                             </form>
                         </div>
